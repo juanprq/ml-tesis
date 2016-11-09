@@ -3,4 +3,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return url_for('static', filename = 'test.css')
+    return render_template('home.html')

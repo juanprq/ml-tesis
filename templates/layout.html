@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    {% include 'partials/menu.html' %}
+    {% for message in get_flashed_messages() %}
+      <div class=flash>{{ message }}</div>
+    {% endfor %}
+    <div class="container">
+      <div class="section">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+    {% include 'partials/footer.html' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/application.js') }}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

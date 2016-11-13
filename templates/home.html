@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <div class="row">
+    <div class="col s12">
+        <h3>Datos:</h3>
+        <div class="divider"></div>
+    </div>
+    <div class="input-field col s12">
+        <select id="time-series">
+            <option value="" disabled selected>Escoger serie de tiempo</option>
+            <option value="url">Caf tales, pascualitos</option>
+            <option value="url2">Caf otro, cualquiera</option>
+        </select>
+        <label>Serie de tiempo:</label>
+    </div>
+    <div class="col s12" id="active-time-series">
+        <p>No hay series seleccionadas.</p>
+    </div>
+    <button id="btn-render" class="col s12 btn waves-effect waves-light">
+        Graficar
+    </button>
+  </div>
+  <div class="row">
+    <div class="col s12">
+        <h3>Gráficos:</h3>
+        <div class="divider"></div>
+    </div>
+    <div class="col s12">
+        Aqui va a ir el chart!
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='scripts/home.js') }}"></script>
+{% endblock %}
